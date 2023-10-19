@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + TS</title>
+</head>
+
+<body>
+
+  <div id="newsletter" class="newsletter">
+
+    <div id="newsletter-info" class="newsletter__info visible">
+
+      <h1>Stay updated!</h1>
+      <p>Join 60,000+ product managers receiving monthly updates on:</p>
+
+      <ul class="advantages">
+        <li class="advantages__advantage">
+          <img src="./icon-list.svg" alt="list icon">
+          <p>Product discovery and building what matters</p>
+        </li>
+        <li class="advantages__advantage">
+          <img src="./icon-list.svg" alt="list icon">
+
+          <p>Measuring to ensure updates are a success</p>
+        </li>
+        <li class="advantages__advantage">
+          <img src="./icon-list.svg" alt="list icon">
+
+          <p>And much more!</p>
+        </li>
+      </ul>
+
+      <form>
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="text" placeholder="email@company.com" />
+
+        <button id="subscribe" class="disabled-btn" type="submit" disabled>
+          <p>
+            Subscribe to monthly newsletter
+          </p>
+
+        </button>
+      </form>
+
+    </div>
+
+    <img id="newsletter-image" class="newsletter__img visible" src="./illustration-sign-up-desktop.svg" alt="">
+
+    <div id="success" class="success">
+      <img class="success__img" src="./icon-success.svg" alt="success">
+      <div class="success__info">
+        <h2>Thanks for subscribing!</h2>
+        <p>
+          A confirmation email has been sent to
+          <span class="email">ash@loremcompany.com</span>. Please open it and click the button inside to confirm your
+          subscription.
+        </p>
+      </div>
+      <button class="success__btn">
+        <p>Dismiss message</p>
+      </button>
+    </div>
+
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
