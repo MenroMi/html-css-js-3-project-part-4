@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* PRIMARY */
+
+  --clr-light-blue: hsl(236, 72%, 79%);
+  --clr-dark-blue: hsl(237, 63%, 64%);
+  /* NEUTRAL */
+
+  --clr-very-light-grayish-blue: hsl(240, 78%, 98%);
+  --clr-light-grayish-blue: hsl(234, 14%, 74%);
+  --clr-grayish-blue: hsl(233, 13%, 49%);
+  --clr-dark-grayish-blue: hsl(232, 13%, 33%);
+
+
+  /* TYPOGRAPHY */
+
+  --clr-default-size: 0.938rm;
+
+}
+
+
+@layer base {
+  html {
+    font-family: "Montserrat", system-ui, sans-serif;
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+    background: url(./bg-bottom.svg) left bottom no-repeat, url(./bg-top.svg) top right no-repeat, var(--clr-very-light-grayish-blue);
+  }
+
+  #root {
+    padding: 5rem 3rem 3rem 3rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  #root {
+    padding: 5rem 1rem 3rem 1rem;
+  }
+}
