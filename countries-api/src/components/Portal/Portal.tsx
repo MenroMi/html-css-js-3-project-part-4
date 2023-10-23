@@ -1,6 +1,8 @@
+// basic
 import React from 'react';
 import {createPortal} from 'react-dom';
 
+// interface
 interface IPortalToBodyProps {
   children: React.ReactNode;
 }

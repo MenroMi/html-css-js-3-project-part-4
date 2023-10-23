@@ -1,3 +1,4 @@
+// components
 import Box from '../Box';
 
 const Overlay = () => {

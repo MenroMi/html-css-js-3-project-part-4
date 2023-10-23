@@ -1,17 +1,25 @@
+// basic
 import {useState} from 'react';
+
+// components
 import Dropdown from '../Dropdown';
 import {ArrowFilterIcon} from '../Icons';
 import {Box, Overlay} from '../UI';
 import PortalToBody from '../Portal';
-import {useCountries} from '../../provider/CountriesProvider';
 
-const Filter = () => {
+// interface
+interface IFilterProps {
+  regions: string | string[];
+  requestCountriesByFilter: (region: string) => Promise<void>;
+}
+
+const Filter = ({regions, requestCountriesByFilter}: IFilterProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const {regions, requestCountriesByFilter} = useCountries();
+  const [actualRegion, setActualRegion] = useState<string>('');
 
   const clickHandler = (e: React.MouseEvent) => {
     const region = (e.target as HTMLDivElement).textContent;
-
+    setActualRegion(region!);
     requestCountriesByFilter(region!);
   };
 
@@ -30,10 +38,12 @@ const Filter = () => {
   return (
     <Box
       onClick={() => setIsOpen(!isOpen)}
-      className="relative bg-white px-4 py-4 lg:py-2 rounded-md shadow-lg hover:shadow-xl transition cursor-pointer z-21"
+      className="relative bg-white h-14 px-4 py-1 lg:py-2 rounded-md shadow-lg hover:shadow-xl transition cursor-pointer z-21 min-w-[12rem]"
     >
       <Box className="flex items-center justify-between gap-12 h-full">
-        <p className="text-sm">Filter by Region</p>
+        <p className="text-sm">
+          {actualRegion ? actualRegion : 'Filter by Region'}
+        </p>
         <ArrowFilterIcon
           classNameSVG={`transition ${isOpen ? 'rotate-0' : '-rotate-180'}`}
         />

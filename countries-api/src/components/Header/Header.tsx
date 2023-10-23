@@ -1,3 +1,4 @@
+// components
 import {Box} from '../UI';
 import {DarkModeIcon, LightModeIcon} from '../Icons';
 

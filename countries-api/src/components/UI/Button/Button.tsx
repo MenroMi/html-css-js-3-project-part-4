@@ -1,3 +1,4 @@
+// interface
 interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   type?: 'button' | 'submit' | 'reset';
   children: React.ReactNode;

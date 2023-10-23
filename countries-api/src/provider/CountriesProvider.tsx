@@ -1,56 +1,44 @@
-import React, {FC, createContext, useContext, useEffect} from 'react';
-import {ICountry} from '../types';
+// basic
+import React, {FC, createContext, useEffect} from 'react';
+
+// store
 import useCountriesStore from '../store';
 
-interface CountriesContext {
-  visibleCountries: ICountry[];
-  regions: string[] | string;
-  getNextBunchCountries: () => void;
-  requestCountriesByFilter: (region: string) => void;
-}
-
+// interface
 interface CountriesProvider {
   children: React.ReactNode;
 }
 
-const CountriesContext = createContext<CountriesContext>({
-  visibleCountries: [],
-  regions: [],
-  getNextBunchCountries: () => {},
-  requestCountriesByFilter: () => {},
-});
+const CountriesContext = createContext({});
 
 const CountriesProvider: FC<CountriesProvider> = ({children}) => {
-  const {
-    visibleCountries,
-    regions,
-    request,
-    requestCountriesByFilter,
-    getNextBunchCountries,
-  } = useCountriesStore();
+  const {isCanGoUp, setIsCanGoUp, requestCountries} = useCountriesStore();
 
-  useEffect(
-    () => {
-      request();
-    },
+  useEffect(() => {
+    requestCountries();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
-  );
+  }, []);
+
+  useEffect(() => {
+    console.log('rerender scroll');
+    const scrollHandler = () => {
+      if (document.documentElement.scrollTop > 600) {
+        setIsCanGoUp(true);
+      }
+
+      if (isCanGoUp && document.documentElement.scrollTop <= 600) {
+        setIsCanGoUp(false);
+      }
+    };
+
+    window.addEventListener('scroll', scrollHandler);
+
+    return () => window.removeEventListener('scroll', scrollHandler);
+  }, [isCanGoUp, setIsCanGoUp]);
 
   return (
-    <CountriesContext.Provider
-      value={{
-        visibleCountries,
-        regions,
-        getNextBunchCountries,
-        requestCountriesByFilter,
-      }}
-    >
-      {children}
-    </CountriesContext.Provider>
+    <CountriesContext.Provider value={{}}>{children}</CountriesContext.Provider>
   );
 };
 
 export default CountriesProvider;
-
-export const useCountries = () => useContext(CountriesContext);

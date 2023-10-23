@@ -1,3 +1,4 @@
+// components
 import {Box} from '../UI';
 
 const ThemeToggler = () => {

@@ -1,6 +1,10 @@
+// basic
 import React from 'react';
+
+// components
 import {Box} from '../UI';
 
+// interface
 interface IDropdownProps {
   classNameBox: string;
   children: React.ReactNode;

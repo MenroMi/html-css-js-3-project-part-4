@@ -1,5 +1,8 @@
-import {ICountry} from '../../types';
+// components
 import {Box} from '../UI';
+
+// types
+import type {ICountry} from '../../types';
 
 interface ICardProps
   extends React.HTMLAttributes<HTMLDivElement>,
@@ -19,7 +22,8 @@ const Card = ({
   return (
     <Box
       {...props}
-      className="flex flex-col bg-white rounded-m shadow-md rounded-md overflow-hidden hover:-translate-y-3 transition cursor-pointer"
+      className="flex flex-col bg-white shadow-md rounded-md overflow-hidden hover:shadow-xl transition cursor-pointer group"
+      tabIndex={1}
     >
       <img src={flag} alt={name} className="h-full w-full" />
 

@@ -1,3 +1,4 @@
+// types
 import {ICountry} from '../types';
 
 const onTakeUniqueRegions = (countries: ICountry[]) => {

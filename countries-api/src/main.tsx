@@ -1,8 +1,15 @@
+// basic
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+// app
 import App from './App';
-import './index.css';
+
+// context provider
 import CountriesProvider from './provider';
+
+// styles
+import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>

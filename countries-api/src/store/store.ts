@@ -1,16 +1,21 @@
+// libs
 import {create} from 'zustand';
-import type {
-  ICountriesSlice,
-  ICountriesStateSlice,
-  IVisibleCountriesSlice,
-} from '../types/zustandTypes';
 
+// slices
 import {
   createCountries,
   createCountriesStateSlice,
   createVisibleCountriesSlice,
 } from './slices';
 
+// types
+import type {
+  ICountriesSlice,
+  ICountriesStateSlice,
+  IVisibleCountriesSlice,
+} from '../types/zustandSliceTypes';
+
+// store
 const useCountriesStore = create<
   ICountriesSlice & ICountriesStateSlice & IVisibleCountriesSlice
 >()((...a) => ({
@@ -20,32 +25,3 @@ const useCountriesStore = create<
 }));
 
 export default useCountriesStore;
-
-/*
-
-  import {create} from 'zustand';
-
-interface CountriesStore {
-  isLoading: boolean;
-  isError: boolean;
-  isFetched: boolean;
-  setIsError: () => void;
-  setIsLoading: () => void;
-  setIsFetched: () => void;
-}
-
-const useStateCountriesStore = create<CountriesStore>()(set => ({
-  isError: false,
-  isFetched: false,
-  isLoading: false,
-  setIsError: () =>
-    set(() => ({isLoading: false, isFetched: false, isError: true})),
-  setIsLoading: () =>
-    set(() => ({isLoading: true, isFetched: false, isError: false})),
-  setIsFetched: () =>
-    set(() => ({isLoading: false, isFetched: true, isError: false})),
-}));
-
-export default useStateCountriesStore;
-
-*/
