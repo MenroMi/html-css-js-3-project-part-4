@@ -2,8 +2,7 @@
 import Cards from '../Cards';
 import Filter from '../Filter';
 import SearchBar from '../SearchBar';
-import {Box, Button} from '../UI';
-import {LoaderIcon} from '../Icons';
+import {Box} from '../UI';
 import ScrollUp from '../ScrollUp';
 
 // constants
@@ -11,6 +10,7 @@ import {FIELD_COUNTRIES} from '../../constants';
 
 // store
 import useCountriesStore from '../../store';
+import {MoreBtn} from '../Buttons';
 
 const Main = () => {
   const {
@@ -28,7 +28,7 @@ const Main = () => {
     regions,
   } = useCountriesStore();
 
-  const clickHandler = () => {
+  const moreBtnClickHandler = () => {
     let field: FIELD_COUNTRIES = FIELD_COUNTRIES.DEFAULT;
 
     if (isError && isLoading) {
@@ -69,14 +69,12 @@ const Main = () => {
         />
 
         {!isLastPage && (
-          <Button
-            disabled={!isFetched}
-            onClick={clickHandler}
-            className="flex gap-2 justify-center items-center text-xl bg-neutral-100 hover:bg-neutral-200 active:bg-neutral-300 transition py-3 px-4 rounded-md w-full max-w-[15rem] text-slate-400 justify-self-center border-2 disabled:opacity-50 self-center"
-          >
-            MORE
-            {!isError && !isFetched && isLoading && <LoaderIcon />}
-          </Button>
+          <MoreBtn
+            isError={isError}
+            isFetched={isFetched}
+            isLoading={isLoading}
+            moreBtnClickHandler={moreBtnClickHandler}
+          />
         )}
       </Box>
 

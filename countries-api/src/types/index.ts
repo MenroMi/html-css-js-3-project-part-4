@@ -12,6 +12,7 @@ export interface Language {
 export interface ICountry {
   flag: string;
   name: string;
+  nativeName: string;
   population: number;
   region: string;
   capital: string;
@@ -19,5 +20,15 @@ export interface ICountry {
   languages: Language[];
   subregion: string;
   topLevelDomain: string[];
-  borders: string[];
+  borders?: string[];
+  alpha3Code: string;
 }
+
+export interface ICountryProps<T extends keyof ICountry> {
+  id: string;
+  title: string;
+  position?: string;
+  prop: T;
+}
+
+export type ICountryKeys = ICountry[keyof ICountry];

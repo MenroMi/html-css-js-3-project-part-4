@@ -1,5 +1,5 @@
 // components
-import PortalToBody from '../Portal';
+import PortalToRoot from '../Portal';
 import {Box} from '../UI';
 import {ArrowTopIcon} from '../Icons';
 
@@ -14,7 +14,7 @@ const ScrollUp = ({isCanGoUp}: IScrollUpProps) => {
   };
 
   return (
-    <PortalToBody>
+    <PortalToRoot>
       <Box
         className={`fixed bg-neutral-200 rounded-full right-20 bottom-20 px-5 py-4 cursor-pointer shadow active:shadow-inner transition ${
           isCanGoUp ? 'opacity-100' : 'opacity-0'
@@ -23,7 +23,7 @@ const ScrollUp = ({isCanGoUp}: IScrollUpProps) => {
       >
         <ArrowTopIcon className="fill-slate-400 h-10" />
       </Box>
-    </PortalToBody>
+    </PortalToRoot>
   );
 };
 

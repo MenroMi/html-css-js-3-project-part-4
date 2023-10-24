@@ -3,12 +3,12 @@ import React from 'react';
 import {createPortal} from 'react-dom';
 
 // interface
-interface IPortalToBodyProps {
+interface IPortalToRootProps {
   children: React.ReactNode;
 }
 
-const PortalToBody = ({children}: IPortalToBodyProps) => {
+const PortalToRoot = ({children}: IPortalToRootProps) => {
   return createPortal(children, document.querySelector('#root')!);
 };
 
-export default PortalToBody;
+export default PortalToRoot;

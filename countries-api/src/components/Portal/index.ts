@@ -1,2 +1,2 @@
-import PortalToBody from './Portal';
-export default PortalToBody;
+import PortalToRoot from './Portal';
+export default PortalToRoot;

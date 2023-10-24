@@ -1,8 +1,14 @@
+// components
 import {Box} from '../UI';
 import Card from '../Card';
+
+// helpers
 import {onFormatNumbers} from '../../helpers';
+
+// type
 import type {ICountry} from '../../types';
 
+// interface
 interface ICardsProps {
   isLoading: boolean;
   isError: boolean;
@@ -22,34 +28,16 @@ const Cards = ({
         {!isLoading && isError && <p>Error...</p>}
         {!isError &&
           visibleCountries.length > 0 &&
-          visibleCountries.map(
-            ({
-              borders,
-              capital,
-              name,
-              currencies,
-              flag,
-              languages,
-              population,
-              region,
-              subregion,
-              topLevelDomain,
-            }) => (
-              <Card
-                key={name}
-                borders={borders}
-                capital={capital}
-                name={name}
-                currencies={currencies}
-                flag={flag}
-                languages={languages}
-                population={onFormatNumbers(population)}
-                region={region}
-                subregion={subregion}
-                topLevelDomain={topLevelDomain}
-              />
-            ),
-          )}
+          visibleCountries.map(({capital, name, flag, region, population}) => (
+            <Card
+              key={name}
+              capital={capital}
+              name={name}
+              flag={flag}
+              region={region}
+              population={onFormatNumbers(population)}
+            />
+          ))}
       </Box>
       {!isLoading && !isError && isFetched && visibleCountries.length === 0 && (
         <Box className="bg-white shadow h-40 w-full max-w-2xl flex justify-center items-center  text-2xl uppercase font-semibold text-slate-500 rounded-md">

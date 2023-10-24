@@ -3,10 +3,12 @@ import {Box} from '../UI';
 
 // types
 import type {ICountry} from '../../types';
+import {Link} from 'react-router-dom';
 
+// interface
 interface ICardProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    Omit<ICountry, 'population'> {
+  extends React.HTMLAttributes<HTMLAnchorElement>,
+    Pick<ICountry, 'capital' | 'name' | 'flag' | 'region'> {
   population: string;
 }
 
@@ -16,11 +18,11 @@ const Card = ({
   flag,
   population,
   region,
-  topLevelDomain,
   ...props
 }: ICardProps) => {
   return (
-    <Box
+    <Link
+      to={`/${name.toLowerCase()}`}
       {...props}
       className="flex flex-col bg-white shadow-md rounded-md overflow-hidden hover:shadow-xl transition cursor-pointer group"
       tabIndex={1}
@@ -42,7 +44,7 @@ const Card = ({
           </li>
         </ul>
       </Box>
-    </Box>
+    </Link>
   );
 };
 

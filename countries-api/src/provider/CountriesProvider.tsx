@@ -20,7 +20,6 @@ const CountriesProvider: FC<CountriesProvider> = ({children}) => {
   }, []);
 
   useEffect(() => {
-    console.log('rerender scroll');
     const scrollHandler = () => {
       if (document.documentElement.scrollTop > 600) {
         setIsCanGoUp(true);

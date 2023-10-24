@@ -5,8 +5,6 @@ const getCountries = async () => {
   try {
     const countries = await axios.get('/data.json');
 
-    console.log(countries);
-
     if (countries.status !== 200) {
       throw new Error('Unexpected Error.');
     }

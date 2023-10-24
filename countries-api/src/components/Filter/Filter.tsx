@@ -5,7 +5,7 @@ import {useState} from 'react';
 import Dropdown from '../Dropdown';
 import {ArrowFilterIcon} from '../Icons';
 import {Box, Overlay} from '../UI';
-import PortalToBody from '../Portal';
+import PortalToRoot from '../Portal';
 
 // interface
 interface IFilterProps {
@@ -55,9 +55,9 @@ const Filter = ({regions, requestCountriesByFilter}: IFilterProps) => {
         </Dropdown>
       )}
       {isOpen && (
-        <PortalToBody>
+        <PortalToRoot>
           <Overlay />
-        </PortalToBody>
+        </PortalToRoot>
       )}
     </Box>
   );

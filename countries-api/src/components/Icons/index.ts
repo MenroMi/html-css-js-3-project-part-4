@@ -4,6 +4,8 @@ import SearchIcon from './SearchIcon';
 import ArrowFilterIcon from './ArrowFilterIcon';
 import LoaderIcon from './LoaderIcon';
 import ArrowTopIcon from './ArrowTopIcon';
+import ArrowLeftIcon from './ArrowLeftIcon';
+import ErrorSadIcon from './ErrorSadIcon';
 
 export {
   DarkModeIcon,
@@ -12,4 +14,6 @@ export {
   ArrowFilterIcon,
   LoaderIcon,
   ArrowTopIcon,
+  ArrowLeftIcon,
+  ErrorSadIcon,
 };
