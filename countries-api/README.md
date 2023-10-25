@@ -41,7 +41,7 @@ Users should be able to:
 - [VITE](https://vitejs.dev/) - React framework
 - [TypeScript](https://www.typescriptlang.org/) - tool for determine types and create scalable apps
 - [ReactRouter](https://reactrouter.com/en/main) - for routing in react
-- [Zustand] (https://github.com/pmndrs/zustand) - global store
+- [Zustand](https://github.com/pmndrs/zustand) - global store
 - [Axios](https://axios-http.com/docs/intro) - for fetching data
 - [TailwindCSS](https://tailwindcss.com/) - For styles
 
