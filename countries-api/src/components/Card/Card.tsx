@@ -24,23 +24,27 @@ const Card = ({
     <Link
       to={`/${name.toLowerCase()}`}
       {...props}
-      className="flex flex-col bg-white shadow-md rounded-md overflow-hidden hover:shadow-xl transition cursor-pointer group"
+      className="flex flex-col bg-white dark:bg-elems-dark shadow-md rounded-md overflow-hidden hover:shadow-xl dark:hover:shadow-2xl transition cursor-pointer group"
       tabIndex={1}
     >
-      <img src={flag} alt={name} className="h-full w-full" />
-
+      <Box className="h-[15rem] overflow-hidden">
+        <img src={flag} alt={name} className="h-full w-full object-cover" />
+      </Box>
       <Box className="py-8 px-5 mt-auto">
         <h3 className="font-bold text-lg">{name}</h3>
 
         <ul className="mt-2">
           <li>
-            <span className="font-bold">Population</span>: {population}
+            <span className="font-bold">Population</span>:{' '}
+            <span className="font-light">{population}</span>
           </li>
           <li>
-            <span className="font-bold">Region</span>: {region}
+            <span className="font-bold">Region</span>:{' '}
+            <span className="font-light">{region}</span>
           </li>
           <li>
-            <span className="font-bold">Capital</span>: {capital}
+            <span className="font-bold">Capital</span>:{' '}
+            <span className="font-light">{capital}</span>
           </li>
         </ul>
       </Box>

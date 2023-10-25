@@ -16,7 +16,7 @@ const ScrollUp = ({isCanGoUp}: IScrollUpProps) => {
   return (
     <PortalToRoot>
       <Box
-        className={`fixed bg-neutral-200 rounded-full right-20 bottom-20 px-5 py-4 cursor-pointer shadow active:shadow-inner transition ${
+        className={`fixed bg-neutral-200  rounded-full right-20 bottom-20 px-5 py-4 cursor-pointer shadow active:shadow-inner transition ${
           isCanGoUp ? 'opacity-100' : 'opacity-0'
         }`}
         onClick={clickHandler}

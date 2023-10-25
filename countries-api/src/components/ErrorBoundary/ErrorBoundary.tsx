@@ -2,8 +2,6 @@
 import {Component, ErrorInfo, ReactNode} from 'react';
 
 // components
-import {Box} from '../UI';
-import {ErrorSadIcon} from '../Icons';
 import {RouteNotExist} from '../Errors';
 
 // interface

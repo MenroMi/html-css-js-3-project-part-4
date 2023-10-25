@@ -3,6 +3,7 @@ import CountryProperty from './CountryProperty';
 import CountryBorders from './CountryBorders';
 import CountryBorder from './CountryBorder';
 import CountryDetail from './CountryDetail';
+import Country from './Country';
 
 export {
   CountryDetail,
@@ -10,4 +11,5 @@ export {
   CountryProperty,
   CountryBorders,
   CountryBorder,
+  Country,
 };

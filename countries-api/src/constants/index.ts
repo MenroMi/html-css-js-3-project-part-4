@@ -3,6 +3,8 @@ import type {ICountry, ICountryProps} from '../types';
 // for pagination
 export const PAGE_SIZE: number = 8;
 
+export const SKELETON_CARDS_SIZE = [1, 2, 3, 4, 5, 6, 7, 8];
+
 // for determine current using elements list
 export enum FIELD_COUNTRIES {
   FILTER = 'fitler',

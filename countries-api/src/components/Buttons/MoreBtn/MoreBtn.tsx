@@ -23,7 +23,7 @@ const MoreBtn: FC<IMoreBtnProps> = ({
     <Button
       disabled={!isFetched}
       onClick={moreBtnClickHandler}
-      className="flex gap-2 justify-center items-center text-xl bg-neutral-100 hover:bg-neutral-200 active:bg-neutral-300 transition py-3 px-4 rounded-md w-full max-w-[15rem] text-slate-400 justify-self-center border-2 disabled:opacity-50 self-center"
+      className="flex gap-2 justify-center items-center text-xl bg-neutral-100 hover:bg-neutral-200 active:bg-neutral-300 dark:bg-elems-dark dark:border-elems-dark dark:hover:bg-slate-600 dark:active:bg-slate-700 dark:hover:border-slate-600 dark:active:border-slate-700 transition py-3 px-4 rounded-md w-full max-w-[15rem] text-slate-400 justify-self-center border-2 disabled:opacity-50 self-center"
     >
       MORE
       {!isError && !isFetched && isLoading && <LoaderIcon />}

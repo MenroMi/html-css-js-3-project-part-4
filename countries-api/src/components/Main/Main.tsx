@@ -6,11 +6,12 @@ import {Box} from '../UI';
 import ScrollUp from '../ScrollUp';
 
 // constants
-import {FIELD_COUNTRIES} from '../../constants';
+import {FIELD_COUNTRIES, SKELETON_CARDS_SIZE} from '../../constants';
 
 // store
 import useCountriesStore from '../../store';
 import {MoreBtn} from '../Buttons';
+import {SkeletonCard} from '../Skeletons';
 
 const Main = () => {
   const {
@@ -45,7 +46,7 @@ const Main = () => {
   };
 
   return (
-    <main className="flex flex-col pt-32 px-7 sm:px-16 pb-10 min-h-[100vh]">
+    <main className="flex flex-col pt-32 px-7 sm:px-16 pb-10 min-h-[100vh] dark:text-txt-dark">
       <Box className="flex flex-col gap-5 lg:gap-0 lg:flex-row justify-between max-h-[10rem]">
         <SearchBar requestCountriesByName={requestCountriesByName} />
         <Filter
@@ -61,12 +62,21 @@ const Main = () => {
             : 'justify-between'
         }`}
       >
-        <Cards
-          visibleCountries={visibleCountries}
-          isError={isError}
-          isLoading={isLoading}
-          isFetched={isFetched}
-        />
+        <Box className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-20 grid-flow-row w-full ">
+          {isLoading && !isFetched ? (
+            (visibleCountries.length === 0
+              ? SKELETON_CARDS_SIZE
+              : visibleCountries
+            ).map(id => <SkeletonCard />)
+          ) : (
+            <Cards
+              visibleCountries={visibleCountries}
+              isError={isError}
+              isLoading={isLoading}
+              isFetched={isFetched}
+            />
+          )}
+        </Box>
 
         {!isLastPage && (
           <MoreBtn

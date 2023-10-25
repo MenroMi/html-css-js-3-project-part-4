@@ -1,5 +1,6 @@
 import {Box} from '../../UI';
 import {ErrorSadIcon} from '../../Icons';
+import {Link} from 'react-router-dom';
 
 interface IRouteNotExistProps {
   info?: string;
@@ -14,12 +15,12 @@ const RouteNotExist = ({info}: IRouteNotExistProps) => {
           {info || 'Something went wrong.'}
         </h2>
       </Box>
-      <a
-        href="/"
-        className="cursor-pointer text-center w-full max-w-[50rem] bg-white px-20 py-8 rounded-lgtransition shadow active:shadow-inner"
+      <Link
+        to="/"
+        className="cursor-pointer text-center w-full max-w-[50rem] bg-white dark:bg-elems-dark px-20 py-8 rounded-lgtransition shadow active:shadow-inner"
       >
         Go to main page
-      </a>
+      </Link>
     </Box>
   );
 };

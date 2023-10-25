@@ -29,19 +29,19 @@ const SearchBar = memo(({requestCountriesByName}: ISearchBarProps) => {
   };
 
   return (
-    <Box className="flex gap-5 h-14 items-center bg-white pl-7 pr-3 py-1 lg:max-w-[27rem] w-full rounded-md shadow-lg transition">
+    <Box className="flex gap-5 h-14 items-center bg-white dark:bg-elems-dark pl-7 pr-3 py-1 lg:max-w-[27rem] w-full rounded-md shadow-lg transition">
       <Box className="h-5 w-5">
-        <SearchIcon />
+        <SearchIcon className="dark:fill-txt-dark" />
       </Box>
       <Input
-        className="h-full w-full placeholder:font-light placeholder:text-sm outline-none"
+        className="h-full w-full placeholder:font-light placeholder:text-sm outline-none dark:bg-elems-dark dark:placeholder:text-txt-dark"
         placeholder="Search for a country..."
         onChange={changeHandler}
         value={searchInput}
       />
       {searchInput && (
         <Button
-          className="hover:bg-neutral-100 active:bg-neutral-200 h-full w-full max-w-[4rem] transition rounded"
+          className="hover:bg-neutral-100 active:bg-neutral-200 dark:hover:bg-neutral-800 dark:active:bg-neutral-900 h-full w-full max-w-[4rem] transition rounded"
           onClick={resetClickHandler}
         >
           Clear
