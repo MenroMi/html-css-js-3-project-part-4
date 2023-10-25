@@ -1,8 +1,7 @@
-import {FC} from 'react';
-
+// interface
 interface IArrowLeftIconProps extends React.HTMLAttributes<HTMLOrSVGElement> {}
 
-const ArrowLeftIcon: FC<IArrowLeftIconProps> = ({...props}) => {
+const ArrowLeftIcon = ({...props}: IArrowLeftIconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

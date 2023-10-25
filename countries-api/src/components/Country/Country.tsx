@@ -1,16 +1,23 @@
-import React, {useEffect, useState} from 'react';
-import {Box, Button} from '../UI';
+// basic
+import {useEffect, useState} from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
+
+// components
+import {Box, Button} from '../UI';
 import {ArrowLeftIcon} from '../Icons';
-import {ICountry} from '../../types';
-import useCountriesStore from '../../store';
 import CountryDetail from './CountryDetail';
 import {SkeletonDetail} from '../Skeletons';
+
+// store
+import useCountriesStore from '../../store';
+
+// types
+import {ICountry} from '../../types';
 
 const Country = () => {
   const navigate = useNavigate();
   const {countryName} = useParams();
-  const {countries, isFetched, isLoading} = useCountriesStore();
+  const {countries, isFetched} = useCountriesStore();
   const [country, setCountry] = useState<ICountry | null>(null);
   const [borderCountries, setBorderCountries] = useState<string[] | null>(null);
 

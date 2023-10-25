@@ -1,5 +1,8 @@
-import {SKELETON_CARDS_SIZE} from '../../../constants';
+// componetns
 import Box from '../../UI/Box';
+
+// constants
+import {SKELETON_CARDS_SIZE} from '../../../constants';
 
 const SkeletonDetail = () => {
   return (

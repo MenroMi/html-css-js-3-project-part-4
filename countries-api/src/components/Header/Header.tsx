@@ -1,8 +1,11 @@
+// basic
+import {Link} from 'react-router-dom';
+
 // components
 import {Box} from '../UI';
 import {DarkModeIcon, LightModeIcon} from '../Icons';
-import {Link} from 'react-router-dom';
 
+// interface
 interface IHeaderProps {
   isDarkMode: boolean;
   setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;

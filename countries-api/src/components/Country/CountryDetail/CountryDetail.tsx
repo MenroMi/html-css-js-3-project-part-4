@@ -6,6 +6,7 @@ import CountryBorders from '../CountryBorders';
 // type
 import type {ICountry} from '../../../types';
 
+// interface
 interface ICountryDetailProps {
   country: ICountry;
   borderCountries: string[] | null;

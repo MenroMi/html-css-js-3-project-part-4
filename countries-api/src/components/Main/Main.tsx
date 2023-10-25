@@ -4,14 +4,14 @@ import Filter from '../Filter';
 import SearchBar from '../SearchBar';
 import {Box} from '../UI';
 import ScrollUp from '../ScrollUp';
+import {MoreBtn} from '../Buttons';
+import {SkeletonCard} from '../Skeletons';
 
 // constants
 import {FIELD_COUNTRIES, SKELETON_CARDS_SIZE} from '../../constants';
 
 // store
 import useCountriesStore from '../../store';
-import {MoreBtn} from '../Buttons';
-import {SkeletonCard} from '../Skeletons';
 
 const Main = () => {
   const {
@@ -67,7 +67,7 @@ const Main = () => {
             (visibleCountries.length === 0
               ? SKELETON_CARDS_SIZE
               : visibleCountries
-            ).map(id => <SkeletonCard />)
+            ).map((_, i) => <SkeletonCard key={i} />)
           ) : (
             <Cards
               visibleCountries={visibleCountries}

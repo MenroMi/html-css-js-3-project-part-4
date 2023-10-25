@@ -1,7 +1,11 @@
-import {Box} from '../../UI';
-import {ErrorSadIcon} from '../../Icons';
+// basic
 import {Link} from 'react-router-dom';
 
+// components
+import {Box} from '../../UI';
+import {ErrorSadIcon} from '../../Icons';
+
+// interface
 interface IRouteNotExistProps {
   info?: string;
 }

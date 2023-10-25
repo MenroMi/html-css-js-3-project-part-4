@@ -1,9 +1,6 @@
 // basic
 import React from 'react';
 
-// libs
-import {twMerge as tw} from 'tailwind-merge';
-
 interface IInputProps extends React.HTMLAttributes<HTMLInputElement> {
   type?: React.HTMLInputTypeAttribute;
   value?: string | number | readonly string[];
@@ -14,7 +11,7 @@ const Input = ({className, type, value, ...props}: IInputProps) => {
     <input
       value={value}
       type={type || 'text'}
-      className={tw('', className)}
+      className={className}
       {...props}
     />
   );
