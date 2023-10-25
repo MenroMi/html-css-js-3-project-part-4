@@ -4,7 +4,6 @@ import {Route, BrowserRouter, Routes} from 'react-router-dom';
 // components
 import {
   Country,
-  CountryDetail,
   ErrorBoundary,
   Header,
   Main,
