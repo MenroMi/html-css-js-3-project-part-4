@@ -25,7 +25,7 @@ const Header = ({setIsDarkMode, isDarkMode}: IHeaderProps) => {
         onClick={() => setIsDarkMode(!isDarkMode)}
         className="flex items-center gap-3 p-3 -mr-3 rounded-2xl hover:bg-neutral-100 active:bg-neutral-200 dark:hover:bg-neutral-800 dark:active:bg-neutral-900 transition"
       >
-        {isDarkMode ? <DarkModeIcon /> : <LightModeIcon />}
+        {isDarkMode ? <LightModeIcon /> : <DarkModeIcon />}
         <p className="text-lg hidden sm:block">
           {isDarkMode ? 'Light Mode' : 'Dark Mode'}
         </p>

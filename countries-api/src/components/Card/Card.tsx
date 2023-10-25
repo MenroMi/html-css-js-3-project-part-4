@@ -25,7 +25,6 @@ const Card = ({
       to={`/${name.toLowerCase()}`}
       {...props}
       className="flex flex-col bg-white dark:bg-elems-dark shadow-md rounded-md overflow-hidden hover:shadow-xl dark:hover:shadow-2xl transition cursor-pointer group"
-      tabIndex={1}
     >
       <Box className="h-[15rem] overflow-hidden">
         <img src={flag} alt={name} className="h-full w-full object-cover" />
